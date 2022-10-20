@@ -24,7 +24,7 @@
   <style type="text/css">
     .login-box-body,
     .register-box-body {
-      background: #1b5e20;
+      background: black;
       padding: 20px;
       border-top: 0;
       color: #666;
@@ -32,7 +32,7 @@
 
     .login-page,
     .register-page {
-      background: #c5bba8;
+      background: white;
     }
   </style>
   <script src="<?php echo base_url() . 'assets/'; ?>plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -52,10 +52,11 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <!-- <p class="login-box-msg"><img src="<?php echo base_url('assets/img/1553659740762.png'); ?>" width='autoWidth' height='70px'></p> -->
-      <p class="login-box-msg">
-      <h2 class="text-center" style="color: white;">APLIKASI MOU MAKAN</h2>
+      <p class="login-box-msg"><img src="<?php echo base_url('assets/img/logo.jpeg'); ?>" width='autoWidth' height='120px'>
+        <!-- <h3 class="text-center" style="color: white;">Bicara Kopi</h3> -->
       </p>
+
+
       <form action="<?php echo site_url('/'); ?>login/cek" method="post">
         <div class="form-group has-feedback">
           <input type="text" class="form-control" placeholder="Username" name="username" required="required" id="username">
@@ -73,7 +74,7 @@
           </select>
         </div>
         <div class="form-group has-feedback">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Log In</button>
+          <button type="submit" class="btn btn-danger btn-block btn-flat">Log In</button>
         </div>
       </form>
 

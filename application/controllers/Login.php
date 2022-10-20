@@ -13,7 +13,7 @@ class Login extends CI_controller
 
 	function index()
 	{
-		$data['title'] = "LOGIN MOU-MAKAN";
+		$data['title'] = "LOGIN Bicara Kopi";
 		$this->load->view('admin/login', $data);
 	}
 
@@ -27,7 +27,7 @@ class Login extends CI_controller
 			if ($cek == TRUE) {
 				$karyawan = $this->Model_karyawan->get_byID($username);
 				$result = $karyawan->row();
-				$data = array('username' => $username, 'akses' => $result->akses, 'logged_in' => TRUE);
+				$data = array('username' => $username, 'nama' => $result->nama, 'akses' => $result->akses, 'logged_in' => TRUE);
 				$this->session->set_userdata($data);
 				redirect('absensi');
 			} else {

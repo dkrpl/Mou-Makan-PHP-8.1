@@ -84,7 +84,7 @@
             <div class="box-footer">
               <div class="col-xs-12 pull-right">
                 <button class="btn btn-flat btn-primary"><i class="fa fa-print"></i> Cetak</button>
-                <!-- <button class="btn btn-flat btn-success"><i class="fa fa-file-excel-o"></i> Excel</button> -->
+                <button class="btn btn-flat btn-success"><i class="fa fa-file-excel-o"></i> Excel</button>
               </div>
 
             </div>

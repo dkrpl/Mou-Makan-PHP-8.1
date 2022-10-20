@@ -6,10 +6,10 @@
    <!-- Sidebar user panel -->
    <div class="user-panel">
      <div class="pull-left image">
-       <img src="<?php echo base_url('assets/img/1553659740762.PNG') ?>" class="img-circle" alt="User Image">
+       <img src="<?php echo base_url('assets/img/logo.jpeg') ?>" class="img-circle" alt="User Image">
      </div>
-     <div class="pull-left info">
-       <p>Aplikasi <i>MouMakan!</i></p>
+     <div class="pull-left info" style="margin-top: 10px;">
+       <p>Bicara <i>Kopi</i></p>
        <p>
      </div>
    </div>
@@ -66,7 +66,7 @@
          </a>
        </li>
 
-       <li class="treeview">
+       <!-- <li class="treeview">
          <a href="#">
            <i class="fa fa-pie-chart"></i>
            <span>Laporan</span>
@@ -84,14 +84,14 @@
              </a>
            </li>
          </ul>
-       </li>
+       </li> -->
        <!--<li>
           <a href="<?php echo base_url() . 'dapur/order' ?>">
             <i class="fa fa-cutlery"></i> <span>Order Status </span>
           </a>
         </li>-->
        <li>
-         <a href="<?php echo base_url(); ?>kasir/ganti_sift">
+         <a href="<?php echo base_url(); ?>kasir/ganti_sift" target="_blank">
            <i class="fa fa-exchange"></i> <span>Ganti Shift </span>
          </a>
        </li>

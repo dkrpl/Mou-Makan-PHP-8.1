@@ -50,7 +50,7 @@
   </style>
 </head>
 
-<body class="hold-transition skin-green sidebar-mini">
+<body class="hold-transition skin-black sidebar-mini">
   <div class="wrapper">
     <!--INIHeader-->
     <?php echo $_header; ?>
@@ -58,7 +58,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
+    <aside class="main-sidebar " style="background-color: black;">
       <!--INISidebar-->
       <?php echo $_sidebar; ?>
       <!--AKHIRSidebar-->
@@ -76,7 +76,7 @@
 
 
     <footer class="main-footer">
-      <strong>Copyright &copy; 2019 Aplikasi Mou Makan.</strong>
+      <strong>Copyright &copy; 2022 CV.Nusantara Media Mandiri</strong>
     </footer>
 
     <!-- Bootstrap 3.3.6 -->

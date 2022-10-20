@@ -9,7 +9,7 @@
 	}
 .content{
 	font-family:Calibri;
-  font-size: 5pt;
+  font-size: 8pt;
 	}
 .footer{
 	font-family:Calibri;
@@ -17,4 +17,4 @@
 	}
 /* memberikan border pada tabel */
 .table { border-right: 1px solid black; border-bottom: 1px solid black; }
-.table th, .table td { border-left: 1px solid black; border-top: 1px solid black; padding: 3px; font-size: 12px}
+.table th, .table td { border-left: 1px solid black; border-top: 1px solid black; padding: 2px; font-size: 12px}

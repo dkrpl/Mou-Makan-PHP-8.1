@@ -14,7 +14,7 @@ class Meja extends CI_controller
 
 	function index()
 	{
-		$data['title'] = "ADMIN PRINGGONDANI RESTO | Data Meja";
+		$data['title'] = "ADMIN Bicara Kopi | Data Meja";
 		$data['konten'] = $this->Model_meja->get();
 		$data['autoid'] = $this->autoid();
 		$this->template->display_admin('admin/view_meja', $data);

@@ -15,7 +15,7 @@ class Menu extends CI_controller
 
 	function index()
 	{
-		$data['title'] = "ADMIN PRINGGONDANI RESTO | Data Menu";
+		$data['title'] = "ADMIN Bicara Kopi | Data Menu";
 		$data['kategori'] = $this->Model_kat->get();
 		$data['konten'] = $this->Model_menu->get();
 		$data['autoid'] = $this->autoid();

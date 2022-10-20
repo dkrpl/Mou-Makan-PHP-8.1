@@ -13,7 +13,7 @@ class Karyawan extends CI_controller
 
 	function index()
 	{
-		$data['title'] = "ADMIN PRINGGONDANI RESTO | Data Karwayan";
+		$data['title'] = "ADMIN Bicara Kopi | Data Karwayan";
 		$data['konten'] = $this->Model_karyawan->get();
 		$data['autoid'] = $this->autoid();
 		$this->template->display_admin('admin/view_akun_karyawan', $data);

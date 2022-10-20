@@ -18,26 +18,7 @@
         <!-- form start -->
         <form role="form">
           <div class="box-body">
-            <!-- <div class="col-lg-12">
-        <div class="form-group">
-            <div class="col-lg-2" style="width: 8%;">
-                  <label class="control-label">Atas Nama</label>
-                </div>
-                <div class="input-group col-lg-10">
-                <input class="form-control" type="text" id="nama" value="-" required="required">
-                </div>
-            </div>
-            </div> -->
             <div class="col-lg-6">
-
-              <div class="form-group">
-                <div class="col-lg-2">
-                  <label class="control-label">Atas Nama</label>
-                </div>
-                <div class="input-group col-lg-10">
-                  <input class="form-control" type="text" id="nama" value="-" required="required">
-                </div>
-              </div>
               <div class="form-group">
                 <div class="col-lg-2">
                   <label class="control-label">Kode</label>
@@ -54,59 +35,43 @@
                   <div class="col-lg-2">
                     <label class="control-label">Item</label>
                   </div>
-                  <div class="input-group col-lg-10">
-                    <input class="form-control" type="text" id="nama_menu" readonly="readonly">
-                  </div>
+                  <input class="form-control" type="text" id="nama_menu" readonly="readonly">
                 </div>
                 <div class="form-group">
                   <div class="col-lg-2">
                     <label class="control-label">Harga</label>
                   </div>
-                  <div class="input-group col-lg-6">
-                    <input class="form-control" id="harga" type="text" readonly="readonly" placeholder="0" style="text-align:right;">
-                  </div>
+                  <input class="form-control" id="harga" type="text" readonly="readonly" placeholder="0" style="text-align:right;">
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-lg-2">
                   <label class="control-label">Qty</label>
                 </div>
-                <div class="input-group col-lg-4">
-                  <input class="form-control" type="number" id="qty" placeholder="0" onkeyup="subTotal(this.value)">
-                </div>
+                <input class="form-control" type="number" id="qty" placeholder="0" onkeyup="subTotal(this.value)">
               </div>
               <div class="form-group">
                 <div class="col-lg-2">
                   <label class="control-label">PB1 (%)</label>
                 </div>
-                <div class="input-group col-lg-2">
-                  <input class="form-control" type="number" id="pb1" placeholder="0" value="<?php echo $pb1; ?>" readonly>
-                </div>
+                <input class="form-control" type="number" id="pb1" placeholder="0" value="<?php echo $pb1; ?>" readonly>
               </div>
-              <!-- <div class="form-group">
-                 <div class="col-lg-2">
-                  <label class="control-label">PB1</label>
-                </div>
-                  <div class="input-group col-lg-4">
-                <input class="form-control" type="number" id="pb1" placeholder="0">
-                </div>
-            </div> -->
               <div class="form-group">
                 <div class="col-lg-2">
                   <label class="control-label">Sub</label>
                 </div>
-                <div class="input-group col-lg-6">
-                  <input class="form-control" type="text" readonly="readonly" id="sub_total" placeholder="0" style="text-align:right;">
-                </div>
+                <input class="form-control" type="text" readonly="readonly" id="sub_total" placeholder="0" style="text-align:right;">
               </div>
               <div class="form-group">
-                <div class="col-sm-2">
-                  <button type="button" class="btn btn-primary" onclick="add_cart()">
-                    <i class="fa fa-cart-plus"></i> Tambah</button>
-                </div>
+                <button type="button" class="btn btn-primary" style="width: 100%;" onclick="add_cart()">
+                  <i class="fa fa-cart-plus"></i> Tambah</button>
               </div>
             </div>
             <div class="col-lg-6">
+              <div class="form-group">
+                <h4>Atas Nama</h4>
+                <input class="form-control input-lg" type="text" id="nama_pelanggan" required="required">
+              </div>
               <div class="form-group">
                 <input type="hidden" name="disc" id="disc" placeholder="0">
                 <input type="hidden" name="pajak" id="pajak" value="<?php echo ($pb1 / 100) * $total; ?>">
@@ -135,7 +100,6 @@
               <div class="form-group">
                 <h4>Kembali</h4>
                 <input class="form-control input-lg" type="text" readonly="readonly" placeholder="0" id="kembali" style="text-align:right;">
-
               </div>
             </div>
             <div class="row">
@@ -181,7 +145,7 @@
               </div>
             </div>
             <div class="box-footer pull-right">
-              <a href="<?php echo base_url() . 'kasir/new_transaksi'; ?>" class="btn btn-warning" onclick="return confirm('Transaksi Baru ?');"><i class="fa fa-file"></i> New</a> <button type="button" class="btn btn-success" id="proses"><i class="fa fa-print"></i> Print</a>
+              <a href="<?php echo base_url() . 'kasir/new_transaksi'; ?>" class="btn btn-warning" onclick="return confirm('Transaksi Baru ?');"><i class="fa fa-file"></i> New</a> <button type="button" class="btn btn-success" id="proses"><i class="fa fa-print"></i> Print</button>
             </div>
           </div>
 
@@ -233,7 +197,6 @@
         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
       </div>
     </div>
-
   </div>
   <div id="print-area" style="font-family: Calibri;display: none;"></div>
 
@@ -375,23 +338,26 @@
     // }
     $('#proses').click(function() { //fungsi proses dan cetak
       var bayar = $('#bayar').val().replace(".", "").replace(".", "");
-      var nama = $('#nama').val();
+      var nama_pelanggan = $('#nama_pelanggan').val();
       var kembali = $('#kembali').val();
       var pajak = $('#pajak').val();
       var total_setelah_pajak = $('#total').val().replace(".", "").replace(".", "");
-      if (bayar != '' && nama != '') {
+      if (bayar != '' && nama_pelanggan != '') {
         $.ajax({
           type: 'POST',
-          data: 'bayar=' + bayar + '&kembali=' + kembali + '&nama=' + nama + '&pajak=' + pajak + '&total_setelah_pajak=' + total_setelah_pajak,
+          data: 'bayar=' + bayar + '&kembali=' + kembali + '&nama_pelanggan=' + nama_pelanggan + '&pajak=' + pajak + '&total_setelah_pajak=' + total_setelah_pajak,
           url: '<?php echo base_url(); ?>kasir/save_langsung',
           success: function(data) {
-            $('#print-area').html(data);
-            printContent("print-area");
+            // console.log(data);
+            window.open('<?php echo base_url(); ?>kasir/print_dot3/?id_transaksi=' + data.id_transaksi + '&id_karyawan' + data.id_karyawan + '&nama_pelanggan=' + data.nama_pelanggan + '&bayar=' + data.bayar + '&meja=' + data.meja + '&kembali=' + data.kembali + '&pajak=' + data.pajak, "_blank")
+            // $('#print-area').html(data);
+            // printContent("print-area");
             window.location = '<?php echo base_url(); ?>kasir/langsung';
+
           }
         });
       } else {
-        alert("Masukkan Jumlah Pembayaran !");
+        alert("Masukkan Jumlah Pembayaran Dan Nama Pemesan !");
       }
     });
 

@@ -22,7 +22,7 @@ class Report extends CI_controller
 
 	function index()
 	{
-		$data['title'] = "ADMIN PRINGGONDANI RESTO | Laporan_penjualan" . date('H:i:s');
+		$data['title'] = "ADMIN Bicara Kopi | Laporan_penjualan" . date('H:i:s');
 		$this->template->display_admin('admin/lap_transaksi', $data);
 	}
 
@@ -87,7 +87,7 @@ class Report extends CI_controller
 
 	function rekap_kat()
 	{
-		$data['title'] = "ADMIN INSTA RESTO | Laporan Penjualan Per Kategori";
+		$data['title'] = "ADMIN Bicara Kopi | Laporan Penjualan Per Kategori";
 		$data['kat'] = $this->Model_kat->get();
 		$this->template->display_admin('admin/lap_kategori', $data);
 	}
@@ -149,7 +149,7 @@ class Report extends CI_controller
 
 	function absensi()
 	{
-		$data['title'] = "ADMIN PRINGGONDANI RESTO | Laporan Absensi Pegawai";
+		$data['title'] = "ADMIN Bicaara Kopi | Laporan Absensi Pegawai";
 		$data['karyawan'] = $this->Model_karyawan->get();
 		$this->template->display_admin('admin/lap_absensi', $data);
 	}
@@ -198,7 +198,7 @@ class Report extends CI_controller
 
 	function pelayanan()
 	{
-		$data['title'] = "ADMIN INSTA RESTO | Laporan Kinerja Pramusaji";
+		$data['title'] = "ADMIN Bicara Kopi | Laporan Kinerja Pramusaji";
 		$data['karyawan'] = $this->Model_karyawan->get();
 		$this->template->display_admin('admin/lap_pelayanan', $data);
 	}
@@ -704,7 +704,7 @@ class Report extends CI_controller
 	{
 		$tahun = date('Y');
 		$bulan = date('m');
-		$data['title'] = "ADMIN INSTA RESTO | Grafik";
+		$data['title'] = "ADMIN Bicara Kopi | Grafik";
 		$data['penjualan'] = $this->Model_report->grafik_penjualan($tahun);
 		$data['barang'] = $this->Model_report->grafik_barang($bulan);
 		$data['kategori'] = $this->Model_report->grafik_kategori($bulan);

@@ -14,7 +14,7 @@ class Admin extends CI_controller
 
 	function index()
 	{
-		$data['title'] = "Admin MOU-MAKAN";
+		$data['title'] = "Admin Bicara Kopi | Admin";
 		$data['admin'] = $this->Model_admin->get();
 		$this->template->display_admin('admin/view_akun_admin', $data);
 	}

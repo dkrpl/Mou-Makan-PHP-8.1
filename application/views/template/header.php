@@ -14,9 +14,9 @@ if ($this->session->userdata('akses') == 'admin') {
   <!-- Logo -->
   <a href="#" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini"><b>Aplikasi</b></span>
+    <span class="logo-mini"><b>Kopi</b></span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>Aplikasi Mou</b> Makan</span>
+    <span class="logo-lg"><b>Bicara</b> Kopi</span>
   </a>
   <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top">

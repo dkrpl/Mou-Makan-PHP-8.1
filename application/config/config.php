@@ -55,7 +55,7 @@ $config['uri_protocol']    = 'REQUEST_URI';
 
 ////////////////PENGATURAN APLIKASI
 $config['pin'] = '1234';
-$config['header_print'] = "MOU-Makan";
+$config['header_print'] = "Bicara Kopi";
 $config['alamat_print'] = "Jl.Raya Sambiresik";
 $config['footer_print'] = "Terima Kasih Atas Kunjungan Anda <br>Silahkan Datang Kembali";
 

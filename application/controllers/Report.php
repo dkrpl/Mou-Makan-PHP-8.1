@@ -10,8 +10,8 @@ class Report extends CI_controller
 	{
 		parent::__construct();
 		date_default_timezone_set('Asia/Jakarta');
-		//load library PHPExcel
-		$this->load->library('Excel/PHPExcel');
+		// PHPExcel is replaced by PhpOffice\PhpSpreadsheet (loaded via Composer)
+		// $this->load->library('Excel/PHPExcel');
 		$this->load->model('Model_report');
 		$this->load->model('Model_karyawan');
 		$this->load->model('Model_kat');

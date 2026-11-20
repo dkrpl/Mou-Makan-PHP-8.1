@@ -125,25 +125,29 @@ class CI_Log {
 
 		isset(self::$func_overload) OR self::$func_overload = ( ! is_php('8.0') && extension_loaded('mbstring') && @ini_get('mbstring.func_overload'));
 
-		$this->_log_path = ($config['log_path'] !== '') ? $config['log_path'] : APPPATH.'logs/';
+		$this->_log_path = (!empty($config['log_path'])) ? $config['log_path'] : APPPATH.'logs/';
 		$this->_file_ext = (isset($config['log_file_extension']) && $config['log_file_extension'] !== '')
 			? ltrim($config['log_file_extension'], '.') : 'php';
 
-		file_exists($this->_log_path) OR mkdir($this->_log_path, 0755, TRUE);
+		if (!empty($this->_log_path))
+		{
+			file_exists($this->_log_path) OR @mkdir($this->_log_path, 0755, TRUE);
+		}
 
-		if ( ! is_dir($this->_log_path) OR ! is_really_writable($this->_log_path))
+		if (empty($this->_log_path) OR ! is_dir($this->_log_path) OR ! is_really_writable($this->_log_path))
 		{
 			$this->_enabled = FALSE;
 		}
 
-		if (is_numeric($config['log_threshold']))
+		$log_threshold = isset($config['log_threshold']) ? $config['log_threshold'] : 0;
+		if (is_numeric($log_threshold))
 		{
-			$this->_threshold = (int) $config['log_threshold'];
+			$this->_threshold = (int) $log_threshold;
 		}
-		elseif (is_array($config['log_threshold']))
+		elseif (is_array($log_threshold))
 		{
 			$this->_threshold = 0;
-			$this->_threshold_array = array_flip($config['log_threshold']);
+			$this->_threshold_array = array_flip($log_threshold);
 		}
 
 		if ( ! empty($config['log_date_format']))

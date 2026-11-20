@@ -12,6 +12,11 @@ class Profil extends CI_controller
 		}
 	}
 
+	function index()
+	{
+		$this->edit_admin();
+	}
+
 	function edit_admin()
 	{
 		$data['title'] = "ADMIN Bicara Kopi";

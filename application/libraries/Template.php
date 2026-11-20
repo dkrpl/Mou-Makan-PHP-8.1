@@ -1,4 +1,5 @@
 <?php 
+#[\AllowDynamicProperties]
 class Template {
 protected $_ci;
 
@@ -12,4 +13,5 @@ protected $_ci;
 		$this->_ci->load->view('/admin_view.php',$data);
 		}				
 }
+class_alias('Template', 'CI_Template');
 ?>

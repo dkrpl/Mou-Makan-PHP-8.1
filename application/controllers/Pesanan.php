@@ -9,7 +9,7 @@ class Pesanan extends CI_controller
 		$this->load->model('Model_menu');
 		$this->load->model('Model_transaksi');
 		$this->load->model('Model_pesanan');
-		$this->load->model('Model_booking');
+		$this->load->model('Model_meja');
 		$this->load->model('Model_karyawan');
 		if ((!$this->session->userdata('logged_in')) && (!$this->session->userdata('akses') == '1')) {
 			redirect('login', 'refresh');
@@ -39,7 +39,7 @@ class Pesanan extends CI_controller
 	function transaksi()
 	{
 		$data['title'] = "KASIR PRINGGONDANI RESTO";
-		$data['meja'] = $this->Model_booking->get_aktif();
+		$data['meja'] = $this->Model_meja->get_aktif();
 		$data['barang'] = $this->Model_menu->getBrg();
 		$this->template->display_admin('admin/ksr_pesanan', $data);
 	}

@@ -15,6 +15,11 @@ class Booking extends CI_controller
 		}
 	}
 
+	function index()
+	{
+		$this->transaksi();
+	}
+
 	function transaksi()
 	{
 		$data['title'] = "Bicara Kopi | Booking";

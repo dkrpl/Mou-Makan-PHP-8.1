@@ -30,20 +30,19 @@ if ($this->session->userdata('akses') == 'admin') {
 
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
-
-
+        <?php $displayUser = isset($user) ? $user : ($this->session->userdata('nama') ?: ($this->session->userdata('akses') ?: 'User')); ?>
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <img src="https://ielmy.files.wordpress.com/2011/06/user-icon.png" class="user-image" alt="User Image">
-            <span class="hidden-xs"><?php echo ucfirst($user); ?></span>
+            <span class="hidden-xs"><?php echo ucfirst($displayUser); ?></span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
               <img src="https://ielmy.files.wordpress.com/2011/06/user-icon.png" class="img-circle" alt="User Image">
               <p>
-                <?php echo strtoupper($user); ?>
+                <?php echo strtoupper($displayUser); ?>
               </p>
             </li>
             <!-- Menu Footer-->
